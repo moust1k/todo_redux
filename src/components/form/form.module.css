@@ -30,3 +30,24 @@ button {
 ::placeholder {
     color: black;
 }
+
+@media (max-width: 400px) {
+    .formWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formWrapper input {
+        margin-bottom: 5px;
+    }
+}
+
+
+
+@media (max-width: 380px) {
+    .numberOfAssigments {
+        font-size: 30px;
+    }
+}

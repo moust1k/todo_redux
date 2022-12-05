@@ -16,7 +16,7 @@ const Form = ({ setTodo, setUserInput, userInput, todos, deleteTodo, toggleTodo 
 
     return (
         <div>
-            {todos.length !== 0 ? <h1>Количество заданий: {todos.length}</h1> : <h2>Напишите ваше первое задание</h2>}
+            {todos.length !== 0 ? <h1 className={css.numberOfAssigments}>Количество заданий: {todos.length}</h1> : <h2>Напишите ваше первое задание</h2>}
             <form className={css.formWrapper} onSubmit={handleOnSubmit}>
                 <input value={userInput} placeholder='Введите задачу...' type="text" onChange={handleInput} />
                 <button>Добавить</button>

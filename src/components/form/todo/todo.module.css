@@ -1,0 +1,40 @@
+.complete {
+    text-decoration: line-through;
+    font-size: 20px;
+    margin: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.text {
+    font-size: 20px;
+    margin: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wrapperTodo {
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+    border-bottom: 1px solid;
+    padding: 20px;
+}
+
+.button {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.deleteIcon {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}

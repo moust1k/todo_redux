@@ -1,0 +1,32 @@
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.formWrapper input,
+button {
+    padding: 10px;
+    background: transparent;
+    border: 2px solid;
+    font-size: 20px;
+    margin-right: 2px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.formWrapper button {
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.formWrapper button:hover {
+    background: black;
+    color: white;
+    transition: .4s ease;
+}
+
+::placeholder {
+    color: black;
+}

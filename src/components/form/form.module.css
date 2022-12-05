@@ -41,6 +41,15 @@ button {
 
     .formWrapper input {
         margin-bottom: 5px;
+        width: 100%;
+    }
+
+    .formWrapper button {
+        width: 50%;
+    }
+
+    .numberOfAssigments {
+        font-size: 30px;
     }
 }
 
@@ -48,6 +57,10 @@ button {
 
 @media (max-width: 380px) {
     .numberOfAssigments {
-        font-size: 30px;
+        font-size: 25px;
+    }
+
+    .formWrapper input {
+        width: 100%;
     }
 }

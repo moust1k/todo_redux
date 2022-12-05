@@ -46,6 +46,8 @@ button {
 
     .formWrapper button {
         width: 50%;
+        background: black;
+        color: white;
     }
 
     .numberOfAssigments {
@@ -58,6 +60,12 @@ button {
 @media (max-width: 380px) {
     .numberOfAssigments {
         font-size: 25px;
+    }
+
+    .formWrapper button {
+        width: 50%;
+        background: black;
+        color: white;
     }
 
     .formWrapper input {

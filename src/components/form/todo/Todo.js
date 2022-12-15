@@ -24,7 +24,7 @@ const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
                     </div>
                 </div>
                 <div>
-                    <div>
+                    <div className={css.flexButtons}>
                         <button className={css.button} onClick={() => onClickEdit(todo.id)}><MdOutlineEdit className={css.deleteIcon} /></button>
                         <button className={css.button} onClick={() => deleteTodo(todo.id)}><TiDelete className={css.deleteIcon} /></button>
                     </div>

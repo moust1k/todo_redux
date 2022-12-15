@@ -53,3 +53,18 @@
     max-width: 330px;
     word-wrap: break-word
 }
+
+@media (max-width: 393px) {
+    .wrapperTodo {
+        max-width: 350px;
+    }
+
+    .task {
+        max-width: 200px;
+    }
+
+    .flexButtons {
+        display: flex;
+        flex-direction: column;
+    }
+}

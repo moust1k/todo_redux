@@ -48,6 +48,7 @@ const mainReducer = (state = initialState, action) => {
                 todos: state.todos.map(todo => {
                     if (todo.id === action.id) {
                         todo.task = action.task
+                        todo.time = new Date().toLocaleString();
                     }
                     return todo;
                 })

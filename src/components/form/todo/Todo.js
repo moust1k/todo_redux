@@ -4,6 +4,7 @@ import { TiDelete } from "react-icons/ti"
 import { MdOutlineEdit } from 'react-icons/md'
 
 const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
+    console.log(todo);
 
     const onClickEdit = (id) => {
         let changeTask = prompt('Напишите новое задание')
@@ -15,7 +16,12 @@ const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
         <>
             <div className={css.wrapperTodo}>
                 <div className={todo.isComplete ? css.complete : css.text} onClick={() => toggleTodo(todo.id)}>
-                    {`${index + 1}. ${todo.task}`}
+                    <div className={css.task}>
+                        {`${index + 1}. ${todo.task}`}
+                    </div>
+                    <div className={css.time}>
+                        {todo.time}
+                    </div>
                 </div>
                 <div>
                     <div>

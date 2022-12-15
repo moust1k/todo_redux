@@ -24,6 +24,7 @@ const mainReducer = (state = initialState, action) => {
                     id: Math.random().toString(36).substr(2, 9),
                     task: state.userInput,
                     isComplete: false,
+                    time: new Date().toLocaleString(),
                 }
                 return {
                     ...state,

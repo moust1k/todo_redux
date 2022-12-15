@@ -2,7 +2,8 @@ import React from 'react'
 import css from './form.module.css'
 import Todo from './todo/Todo';
 
-const Form = ({ setTodo, setUserInput, userInput, todos, deleteTodo, toggleTodo }) => {
+const Form = ({ setTodo, setUserInput, userInput, todos, deleteTodo, toggleTodo, editTodo }) => {
+
 
     let handleOnSubmit = (e) => {
         e.preventDefault()
@@ -13,6 +14,7 @@ const Form = ({ setTodo, setUserInput, userInput, todos, deleteTodo, toggleTodo 
         let input = e.target.value;
         setUserInput(input);
     }
+
 
     return (
         <div>
@@ -27,6 +29,7 @@ const Form = ({ setTodo, setUserInput, userInput, todos, deleteTodo, toggleTodo 
                 todo={todo}
                 deleteTodo={deleteTodo}
                 toggleTodo={toggleTodo}
+                editTodo={editTodo}
             />)}
         </div>
     )

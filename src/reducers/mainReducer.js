@@ -2,6 +2,7 @@ const SET_USER_INPUT = 'SET_USER_INPUT';
 const ADD_TODO = 'ADD_TODO';
 const DELETE_TODO = 'DELETE_TODO';
 const TOGGLE_TODO = 'TOGGLE_TODO';
+const EDIT_TODO = 'EDIT_TODO';
 
 
 let initialState = {
@@ -40,6 +41,16 @@ const mainReducer = (state = initialState, action) => {
                 ...state,
                 todos: state.todos.map(todo => todo.id === action.id ? { ...todo, isComplete: !todo.isComplete } : { ...todo }),
             }
+        case EDIT_TODO:
+            return {
+                ...state,
+                todos: state.todos.map(todo => {
+                    if (todo.id === action.id) {
+                        todo.task = action.task
+                    }
+                    return todo;
+                })
+            }
         default:
             return state;
     }
@@ -50,5 +61,6 @@ export const setUserInput = (text) => ({ type: SET_USER_INPUT, text });
 export const setTodo = () => ({ type: ADD_TODO })
 export const deleteTodo = (id) => ({ type: DELETE_TODO, id })
 export const toggleTodo = (id) => ({ type: TOGGLE_TODO, id })
+export const editTodo = (id, task) => ({ type: EDIT_TODO, id, task })
 
 export default mainReducer;

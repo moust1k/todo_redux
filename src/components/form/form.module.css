@@ -31,6 +31,19 @@ button {
     color: black;
 }
 
+.buttonAllTasks {
+    margin-top: .5rem;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.buttonAllTasks:hover {
+    background: black;
+    color: white;
+    transition: .4s ease;
+}
+
+/*MEDIA*/
 @media (max-width: 400px) {
     .formWrapper {
         display: flex;

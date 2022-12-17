@@ -49,9 +49,15 @@
 .task {
     display: flex;
     text-align: start;
+    align-items: center;
     margin-bottom: .3rem;
     max-width: 330px;
-    word-wrap: break-word
+}
+
+.inputTask {
+    margin-right: .3rem;
+    margin-top: .3rem;
+    cursor: pointer;
 }
 
 @media (max-width: 393px) {
@@ -59,8 +65,9 @@
         max-width: 350px;
     }
 
+
     .task {
-        max-width: 200px;
+        width: 250px;
     }
 
     .flexButtons {

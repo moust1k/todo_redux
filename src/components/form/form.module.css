@@ -16,12 +16,12 @@ button {
     border-radius: 10px;
 }
 
-.formWrapper button {
+.buttonStyle {
     cursor: pointer;
     transition: .4s ease;
 }
 
-.formWrapper button:hover {
+.buttonStyle:hover {
     background: black;
     color: white;
     transition: .4s ease;

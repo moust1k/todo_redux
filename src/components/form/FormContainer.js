@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Form from './Form'
-import { setUserInput, setTodo, deleteTodo, toggleTodo, editTodo } from '../../reducers/mainReducer'
+import { setUserInput, setTodo, deleteTodo, toggleTodo, editTodo, deleteAllTodo } from '../../reducers/mainReducer'
 
 
 
 
 const FormContainer = (props) => {
-
 
     return (
         <Form
@@ -16,12 +15,12 @@ const FormContainer = (props) => {
             userInput={props.userInput}
             todos={props.todos}
             deleteTodo={props.deleteTodo}
+            deleteAllTodo={props.deleteAllTodo}
             toggleTodo={props.toggleTodo}
             editTodo={props.editTodo}
         />
     )
 }
-
 
 let mapStateToProps = (state) => {
     return {
@@ -31,4 +30,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { setUserInput, setTodo, deleteTodo, toggleTodo, editTodo })(FormContainer)
+export default connect(mapStateToProps, { setUserInput, setTodo, deleteTodo, toggleTodo, editTodo, deleteAllTodo })(FormContainer)

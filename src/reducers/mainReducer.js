@@ -3,6 +3,7 @@ const ADD_TODO = 'ADD_TODO';
 const DELETE_TODO = 'DELETE_TODO';
 const TOGGLE_TODO = 'TOGGLE_TODO';
 const EDIT_TODO = 'EDIT_TODO';
+const DELETE_ALL_TODO = 'DELETE_ALL_TODO';
 
 
 let initialState = {
@@ -53,6 +54,11 @@ const mainReducer = (state = initialState, action) => {
                     return todo;
                 })
             }
+        case DELETE_ALL_TODO:
+            return {
+                ...state,
+                todos: [],
+            }
         default:
             return state;
     }
@@ -64,5 +70,6 @@ export const setTodo = () => ({ type: ADD_TODO })
 export const deleteTodo = (id) => ({ type: DELETE_TODO, id })
 export const toggleTodo = (id) => ({ type: TOGGLE_TODO, id })
 export const editTodo = (id, task) => ({ type: EDIT_TODO, id, task })
+export const deleteAllTodo = () => ({ type: DELETE_ALL_TODO })
 
 export default mainReducer;

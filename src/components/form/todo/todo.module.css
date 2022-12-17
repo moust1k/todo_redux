@@ -60,16 +60,29 @@
     cursor: pointer;
 }
 
+@media (max-width: 320px) {
+    .task {
+        max-width: 210px;
+    }
+
+    .text {
+        width: 200px;
+    }
+}
+
 @media (max-width: 393px) {
     .wrapperTodo {
         max-width: 350px;
     }
 
-
     .task {
-        width: 250px;
+        max-width: 250px;
     }
 
+
+}
+
+@media (max-width: 450px) {
     .flexButtons {
         display: flex;
         flex-direction: column;

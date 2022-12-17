@@ -57,8 +57,8 @@ button {
         width: 100%;
     }
 
-    .formWrapper button {
-        width: 50%;
+    .buttonStyle {
+        width: 60%;
         background: black;
         color: white;
     }
@@ -75,7 +75,7 @@ button {
         font-size: 25px;
     }
 
-    .formWrapper button {
+    .buttonStyle {
         width: 50%;
         background: black;
         color: white;

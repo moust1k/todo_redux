@@ -8,7 +8,7 @@ const DELETE_ALL_TODO = 'DELETE_ALL_TODO';
 
 let initialState = {
     userInput: '',
-    todos: [],
+    todos: []
 }
 
 const mainReducer = (state = initialState, action) => {

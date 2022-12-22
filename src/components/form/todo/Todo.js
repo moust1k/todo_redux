@@ -4,9 +4,9 @@ import { TiDelete } from "react-icons/ti"
 import { MdOutlineEdit } from 'react-icons/md'
 
 const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
-    console.log(todo);
-    const onClickEdit = (id) => {
-        let changeTask = prompt('Напишите новое задание')
+
+    const onClickEdit = (id, task) => {
+        let changeTask = prompt('Напишите новое задание', task)
         if (changeTask === '' || changeTask === null) return null;
         editTodo(id, changeTask)
     }
@@ -17,7 +17,7 @@ const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
             <div className={css.wrapperTodo}>
                 <div className={todo.isComplete ? css.complete : css.text} onClick={() => toggleTodo(todo.id)}>
                     <div className={css.task}>
-                        <input className={css.inputTask} type="checkbox" checked={todo.isComplete} />
+                        <input onChange={() => { }} className={css.inputTask} type="checkbox" checked={todo.isComplete} />
                         <div>
                             {todo.task}
                         </div>
@@ -29,7 +29,7 @@ const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
                 </div>
                 <div>
                     <div className={css.flexButtons}>
-                        <button className={css.button} onClick={() => onClickEdit(todo.id)}><MdOutlineEdit className={css.deleteIcon} /></button>
+                        <button className={css.button} onClick={() => onClickEdit(todo.id, todo.task)}><MdOutlineEdit className={css.deleteIcon} /></button>
                         <button className={css.button} onClick={() => deleteTodo(todo.id)}><TiDelete className={css.deleteIcon} /></button>
                     </div>
                 </div>

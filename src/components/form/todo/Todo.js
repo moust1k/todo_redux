@@ -4,12 +4,13 @@ import { TiDelete } from "react-icons/ti"
 import { MdOutlineEdit } from 'react-icons/md'
 
 const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
-
+    console.log(todo);
     const onClickEdit = (id) => {
         let changeTask = prompt('Напишите новое задание')
         if (changeTask === '' || changeTask === null) return null;
         editTodo(id, changeTask)
     }
+
 
     return (
         <>

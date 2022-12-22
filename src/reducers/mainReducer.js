@@ -50,6 +50,7 @@ const mainReducer = (state = initialState, action) => {
                     if (todo.id === action.id) {
                         todo.task = action.task
                         todo.time = new Date().toLocaleString();
+                        todo.isComplete = false;
                     }
                     return todo;
                 })

@@ -25,6 +25,10 @@
     border: none;
 }
 
+.navWrapper div:first-child {
+    margin-left: 0;
+}
+
 .lowActive {
     background-color: green;
     color: white;

@@ -1,37 +1,30 @@
 import React from 'react'
 import css from './form.module.css'
-import Todo from './todo/Todo';
+import Nav from '../nav/Nav';
 
-const Form = ({ setTodo, setUserInput, userInput, todos, deleteTodo, toggleTodo, editTodo, deleteAllTodo }) => {
+const Form = ({ todos, setActive, lowImportantTasks, middleImportantTasks, highImportantTasks, deleteAllTodo }) => {
 
-    let handleOnSubmit = (e) => {
-        e.preventDefault()
-        setTodo()
+    let deleteAndConfirm = () => {
+        let ask = window.confirm('Вы действительно хотите удалить все задания?')
+        if (ask) {
+            deleteAllTodo()
+        }
     }
-
-    let setTodoValue = (e) => {
-        let input = e.target.value;
-        setUserInput(input);
-    }
-
 
     return (
         <div>
-            {todos.length > 0 ? <h1 className={css.numberOfAssigments}>Количество заданий: {todos.length}</h1> : <h2>Напишите ваше первое задание</h2>}
-            <form className={css.formWrapper} onSubmit={handleOnSubmit}>
-                <input value={userInput} required placeholder='Введите задачу...' type="text" onChange={setTodoValue} />
-                <button className={css.buttonStyle}>Добавить</button>
-            </form>
-            {todos.map((todo, index) =>
-                <Todo
-                    key={todo.id}
-                    index={index}
-                    todo={todo}
-                    deleteTodo={deleteTodo}
-                    toggleTodo={toggleTodo}
-                    editTodo={editTodo} />
-            )}
-            {todos.length > 0 && <button className={css.buttonStyle} onClick={() => deleteAllTodo()}>Удалить все задачи</button>}
+            {todos.length > 0
+                ? <div className={css.wrapperTasks}>
+                    <p>Не срочные: {lowImportantTasks.length}</p>
+                    <p>Cредней срочности: {middleImportantTasks.length}</p>
+                    <p>Срочные: {highImportantTasks.length}</p>
+                </div>
+                : <h2>Напишите ваше первое задание</h2>}
+            <div className={css.formWrapper}>
+                <button onClick={() => setActive(true)} className={css.buttonStyle}>Добавить задание</button>
+                <button className={css.buttonStyle} onClick={deleteAndConfirm}>Удалить все задания</button>
+            </div>
+            <Nav />
         </div>
     )
 }

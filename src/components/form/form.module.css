@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 1.5rem;
 }
 
 .formWrapper input,
@@ -14,6 +14,26 @@ button {
     margin-right: 2px;
     outline: none;
     border-radius: 10px;
+}
+
+.wrapperTasks {
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapperTasks p {
+    border-right: 1px solid;
+    padding: 0 5px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.wrapperTasks p:last-child {
+    border: none;
 }
 
 .buttonStyle {
@@ -44,6 +64,26 @@ button {
 }
 
 /*MEDIA*/
+
+@media (max-width: 500px) {
+    .wrapperTasks p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 440px) {
+    .wrapperTasks p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 415px) {
+    .buttonStyle {
+        background: black;
+        color: white;
+    }
+}
+
 @media (max-width: 400px) {
     .formWrapper {
         display: flex;
@@ -58,7 +98,7 @@ button {
     }
 
     .buttonStyle {
-        width: 60%;
+        width: 70%;
         background: black;
         color: white;
     }
@@ -75,8 +115,12 @@ button {
         font-size: 25px;
     }
 
+    .wrapperTasks p {
+        font-size: 12px;
+    }
+
     .buttonStyle {
-        width: 50%;
+        width: 70%;
         background: black;
         color: white;
     }

@@ -1,0 +1,44 @@
+.navWrapper {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.navWrapper a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+
+.navWrapper div {
+    border-right: 1px solid;
+}
+
+.navWrapper div:last-child {
+    border: none;
+}
+
+.lowActive {
+    background-color: green;
+    color: white;
+    border-radius: 50px;
+}
+
+.middleActive {
+    background-color: yellow;
+    color: white;
+    border-radius: 50px;
+}
+
+.highActive {
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+}

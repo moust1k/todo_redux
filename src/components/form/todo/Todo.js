@@ -3,7 +3,8 @@ import css from './todo.module.css'
 import { TiDelete } from "react-icons/ti"
 import { MdOutlineEdit } from 'react-icons/md'
 
-const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo }) => {
+const Todo = ({ todo, deleteTodo, toggleTodo, index, editTodo, }) => {
+
 
     const onClickEdit = (id, task) => {
         let changeTask = prompt('Напишите новое задание', task)

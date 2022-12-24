@@ -1,4 +1,3 @@
-const SET_USER_INPUT = 'SET_USER_INPUT';
 const ADD_TODO = 'ADD_TODO';
 const DELETE_TODO = 'DELETE_TODO';
 const TOGGLE_TODO = 'TOGGLE_TODO';
@@ -7,32 +6,26 @@ const DELETE_ALL_TODO = 'DELETE_ALL_TODO';
 
 
 let initialState = {
-    userInput: '',
-    todos: []
+    todos: [],
 }
 
 const mainReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case SET_USER_INPUT:
+        case ADD_TODO:
+            let newTodo = {
+                id: Math.random().toString(36).substr(2, 9),
+                task: action.task,
+                isComplete: false,
+                importance: action.importance,
+                time: new Date().toLocaleString(),
+            }
             return {
                 ...state,
-                userInput: action.text
+                todos: [...state.todos, newTodo],
+
             }
-        case ADD_TODO:
-            if (state.userInput.trim()) {
-                let newTodo = {
-                    id: Math.random().toString(36).substr(2, 9),
-                    task: state.userInput,
-                    isComplete: false,
-                    time: new Date().toLocaleString(),
-                }
-                return {
-                    ...state,
-                    todos: [...state.todos, newTodo],
-                    userInput: '',
-                }
-            }
+
         case DELETE_TODO:
             return {
                 ...state,
@@ -66,8 +59,7 @@ const mainReducer = (state = initialState, action) => {
 }
 
 
-export const setUserInput = (text) => ({ type: SET_USER_INPUT, text });
-export const setTodo = () => ({ type: ADD_TODO })
+export const setTodo = (task, importance) => ({ type: ADD_TODO, task, importance })
 export const deleteTodo = (id) => ({ type: DELETE_TODO, id })
 export const toggleTodo = (id) => ({ type: TOGGLE_TODO, id })
 export const editTodo = (id, task) => ({ type: EDIT_TODO, id, task })

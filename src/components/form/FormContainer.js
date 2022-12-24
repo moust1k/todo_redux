@@ -1,33 +1,33 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Form from './Form'
-import { setUserInput, setTodo, deleteTodo, toggleTodo, editTodo, deleteAllTodo } from '../../reducers/mainReducer'
+import { deleteAllTodo } from '../../reducers/mainReducer'
 
 
 
 
 const FormContainer = (props) => {
 
+    let lowImportantTasks = props.todos.filter(todo => todo.importance === 'low')
+    let middleImportantTasks = props.todos.filter(todo => todo.importance === 'middle')
+    let highImportantTasks = props.todos.filter(todo => todo.importance === 'high')
+
     return (
         <Form
-            setTodo={props.setTodo}
-            setUserInput={props.setUserInput}
-            userInput={props.userInput}
+            lowImportantTasks={lowImportantTasks}
+            middleImportantTasks={middleImportantTasks}
+            highImportantTasks={highImportantTasks}
+            setActive={props.setActive}
             todos={props.todos}
-            deleteTodo={props.deleteTodo}
             deleteAllTodo={props.deleteAllTodo}
-            toggleTodo={props.toggleTodo}
-            editTodo={props.editTodo}
         />
     )
 }
 
 let mapStateToProps = (state) => {
     return {
-        userInput: state.mainReducer.userInput,
         todos: state.mainReducer.todos,
-        jsonTodos: state.mainReducer.jsonTodos,
     }
 }
 
-export default connect(mapStateToProps, { setUserInput, setTodo, deleteTodo, toggleTodo, editTodo, deleteAllTodo })(FormContainer)
+export default connect(mapStateToProps, { deleteAllTodo })(FormContainer)

@@ -33,7 +33,7 @@ const Todo: React.FC<PropsType> = ({ todo, deleteTodo, toggleTodo, index, editTo
 						<Typography.Text className={css.textWidth} strong>
 							{todo.task}
 						</Typography.Text>
-						<div>
+						<div className={css.buttonsWrapper}>
 							<button className={css.button} onClick={() => onClickEdit(todo.id)}>
 								<MdOutlineEdit className={css.deleteIcon} />
 							</button>

@@ -8,6 +8,7 @@ import HighImportance from '../pages/HighImportance'
 import FormContainer from '../form/FormContainer'
 import Modal from '../modal/Modal'
 import ModalFormContainer from '../form/modalForm/ModalFormContainer'
+import css from './mainBody.module.css'
 
 export const MainBody = () => {
 	const [active, setActive] = useState<boolean>(false)
@@ -18,7 +19,7 @@ export const MainBody = () => {
 
 	return (
 		<>
-			<Content className='site-layout' style={{ padding: '0 50px', textAlign: 'center' }}>
+			<Content className={css.siteLayout}>
 				<div style={{ padding: 24, minHeight: 380, background: colorBgContainer }}>
 					<FormContainer setActive={setActive} />
 					{active && (

@@ -8,8 +8,8 @@ const { Header } = Layout
 const Nav: FC = () => {
 	return (
 		<>
-			<Header style={{ position: 'sticky', top: 0, zIndex: 1, width: '100%' }}>
-				<Menu theme='dark' mode='horizontal' defaultSelectedKeys={['/']}>
+			<Header className={css.header}>
+				<Menu className={css.menuWrapper} theme='dark' mode='horizontal' defaultSelectedKeys={['/']}>
 					<Menu.Item key='/'>
 						<NavLink to='/' className={css.link}>
 							Срочные

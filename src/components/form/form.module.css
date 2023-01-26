@@ -53,7 +53,7 @@
 	}
 	.button {
 		text-align: center;
-		width: 100%;
+		width: 90%;
 	}
 	.addTask {
 		margin-right: 0;
@@ -78,10 +78,6 @@
 	.formWrapper input {
 		margin-bottom: 5px;
 		width: 100%;
-	}
-
-	.button {
-		width: 90%;
 	}
 
 	.numberOfAssigments {

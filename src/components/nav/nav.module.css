@@ -5,3 +5,43 @@
 	font-size: 16px;
 	padding: 5px;
 }
+
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+}
+
+@media (max-width: 600px) {
+	.menuWrapper {
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 522px) {
+	.link {
+		font-size: 13px;
+	}
+	.header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+@media (max-width: 466px) {
+	.link {
+		font-size: 13px;
+	}
+}
+@media (max-width: 380px) {
+	.link {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 326px) {
+	.link {
+		font-size: 8px;
+	}
+}

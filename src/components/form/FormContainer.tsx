@@ -4,6 +4,7 @@ import Form from './Form'
 import { actions } from '../../reducers/mainReducer'
 import { AppStateType } from '../../store'
 import { TodoType } from '../../types/types'
+import { GetArrayForImportance } from '../helpers/GetArrayForImportance'
 
 type PropsType = {
 	todos: TodoType[]
@@ -14,9 +15,7 @@ type PropsType = {
 const { deleteAllTodo } = actions
 
 const FormContainer: FC<PropsType> = props => {
-	let lowImportantTasks = props.todos.filter(todo => todo.importance === 'low')
-	let middleImportantTasks = props.todos.filter(todo => todo.importance === 'middle')
-	let highImportantTasks = props.todos.filter(todo => todo.importance === 'high')
+	const { lowImportantTasks, middleImportantTasks, highImportantTasks } = GetArrayForImportance()
 
 	return (
 		<Form

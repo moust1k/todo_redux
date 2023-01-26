@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import PagesCreatorByImportance from './PagesCreatorByImportance'
-import { useTodosFromState } from '../../hooks/useTodosFromState'
+import { GetArrayForImportance } from '../helpers/GetArrayForImportance'
 
 const HighImportance: FC = () => {
-	const arrayHighImportance = useTodosFromState('high')
+	const { highImportantTasks } = GetArrayForImportance()
 
 	return (
 		<>
-			<PagesCreatorByImportance importanceArray={arrayHighImportance} />
+			<PagesCreatorByImportance importanceArray={highImportantTasks} />
 		</>
 	)
 }

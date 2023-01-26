@@ -1,8 +1,15 @@
 .wrapper {
-    width: 500px;
-    margin: 0 auto;
+	width: 500px;
+	margin: 0 auto;
 }
 
 .output {
-    margin-top: 2rem;
+	margin-top: 2rem;
+}
+
+.wrapperTodo {
+	margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
 }

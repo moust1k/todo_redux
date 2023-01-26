@@ -18,9 +18,11 @@ const PagesCreatorByImportance: FC<PropsType> = ({ importanceArray, deleteTodo, 
 	return (
 		<>
 			{importanceArray.length <= 0 && <div className={css.output}>Напишите ваше первое задание</div>}
-			{importanceArray.map(todo => (
-				<Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo} editTodo={editTodo} />
-			))}
+			<div className={css.wrapperTodo}>
+				{importanceArray.map(todo => (
+					<Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo} editTodo={editTodo} />
+				))}
+			</div>
 		</>
 	)
 }

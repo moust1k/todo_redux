@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { PropsType } from './ModalFormContainer'
 import css from './modalForm.module.css'
 import { Formik, Form, Field } from 'formik'
+import { Space } from 'antd'
 
 type InitialValues = {
 	task: string
@@ -43,12 +44,14 @@ const ModalForm: FC<PropsType> = ({ setActive, setTodo }) => {
 							<option value='low'>Не срочные</option>
 						</Field>
 						<div className={css.buttons}>
-							<button type={'submit'} className='btn btn-primary'>
-								Добавить
-							</button>
-							<button type='button' onClick={() => setActive(false)} className='btn btn-secondary'>
-								Отмена
-							</button>
+							<Space>
+								<button type={'submit'} className='btn btn-primary'>
+									Добавить
+								</button>
+								<button type='button' onClick={() => setActive(false)} className='btn btn-secondary'>
+									Отмена
+								</button>
+							</Space>
 						</div>
 					</Form>
 				)}

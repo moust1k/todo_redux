@@ -1,132 +1,110 @@
 .formWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
-}
-
-.formWrapper input,
-button {
-    padding: 10px;
-    background: transparent;
-    border: 2px solid;
-    font-size: 20px;
-    margin-right: 2px;
-    outline: none;
-    border-radius: 10px;
+	margin-top: 1.5rem;
 }
 
 .wrapperTasks {
-    margin: 0 auto;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	padding: 10px;
 }
 
-.wrapperTasks p {
-    border-right: 1px solid;
-    padding: 0 5px;
-    font-size: 20px;
-    font-weight: bold;
-
+.tasks {
+	padding: 0 5px;
+	font-size: 20px;
+	font-weight: bold;
 }
 
-.wrapperTasks p:last-child {
-    border: none;
+.addTask {
+	margin-right: 10px;
 }
 
-
-.buttonStyle {
-    cursor: pointer;
-    transition: .4s ease;
-}
-
-.buttonStyle:hover {
-    background: black;
-    color: white;
-    transition: .4s ease;
-}
-
-::placeholder {
-    color: black;
-}
-
-.buttonAllTasks {
-    margin-top: .5rem;
-    cursor: pointer;
-    transition: .4s ease;
-}
-
-.buttonAllTasks:hover {
-    background: black;
-    color: white;
-    transition: .4s ease;
+.flexForTasks {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 /*MEDIA*/
 
-@media (max-width: 500px) {
-    .wrapperTasks p {
-        font-size: 17px;
-    }
+@media (max-width: 675px) {
+	.tasks {
+		padding: 0 5px;
+		font-size: 15px;
+		font-weight: bold;
+		border-bottom: 1px solid;
+	}
+	.flexForTasks {
+		display: flex;
+		flex-direction: column;
+	}
+	.formWrapper {
+		margin-top: 0.5rem;
+	}
+}
+
+@media (max-width: 510px) {
+	.wrapperTasks p {
+		font-size: 17px;
+	}
+	.formWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.button {
+		text-align: center;
+		width: 100%;
+	}
+	.addTask {
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
 }
 
 @media (max-width: 440px) {
-    .wrapperTasks p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 415px) {
-    .buttonStyle {
-        background: black;
-        color: white;
-    }
+	.wrapperTasks p {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 400px) {
-    .formWrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+	.formWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
-    .formWrapper input {
-        margin-bottom: 5px;
-        width: 100%;
-    }
+	.formWrapper input {
+		margin-bottom: 5px;
+		width: 100%;
+	}
 
-    .buttonStyle {
-        width: 70%;
-        background: black;
-        color: white;
-    }
+	.button {
+		width: 100%;
+	}
 
-    .numberOfAssigments {
-        font-size: 30px;
-    }
+	.numberOfAssigments {
+		font-size: 30px;
+	}
 }
 
-
-
 @media (max-width: 380px) {
-    .numberOfAssigments {
-        font-size: 25px;
-    }
+	.numberOfAssigments {
+		font-size: 25px;
+	}
 
-    .wrapperTasks p {
-        font-size: 12px;
-    }
+	.wrapperTasks p {
+		font-size: 12px;
+	}
 
-    .buttonStyle {
-        width: 70%;
-        background: black;
-        color: white;
-    }
+	.buttonStyle {
+		width: 70%;
+		background: black;
+		color: white;
+	}
 
-    .formWrapper input {
-        width: 100%;
-    }
+	.formWrapper input {
+		width: 100%;
+	}
 }

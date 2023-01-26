@@ -1,27 +1,16 @@
 .complete {
 	text-decoration: line-through;
-	font-size: 20px;
-	margin: 5px;
-	color: black;
-	font-weight: bold;
 }
 
-.text {
+.text,
+.complete {
 	font-size: 20px;
-	margin: 5px;
 	color: black;
-	font-weight: bold;
 	cursor: pointer;
 }
 
 .wrapperTodo {
-	max-width: 500px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 10px auto;
-	border-bottom: 1px solid;
-	padding: 20px;
+	width: 33%;
 }
 
 .button {
@@ -49,14 +38,18 @@
 .buttons {
 	margin-top: 1rem;
 	display: flex;
+	width: 20%;
 }
 
 .task {
 	display: flex;
+	justify-content: space-between;
 	text-align: start;
 	align-items: center;
-	margin-bottom: 0.3rem;
-	max-width: 330px;
+}
+
+.textWidth {
+	width: 80%;
 }
 
 .inputTask {
@@ -65,11 +58,38 @@
 	cursor: pointer;
 }
 
+@media (max-width: 1550px) {
+	.wrapperTodo {
+		width: 45%;
+		margin: auto;
+	}
+}
+@media (max-width: 1000px) {
+	.wrapperTodo {
+		width: 100%;
+		margin: auto;
+	}
+}
+@media (max-width: 601px) {
+	.deleteIcon {
+		display: flex;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+	}
+}
+@media (max-width: 553px) {
+	.deleteIcon {
+		display: flex;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+	}
+}
 @media (max-width: 320px) {
 	.task {
 		max-width: 210px;
 	}
-
 	.text {
 		width: 200px;
 	}
@@ -79,15 +99,7 @@
 	.wrapperTodo {
 		max-width: 350px;
 	}
-
 	.task {
 		max-width: 250px;
-	}
-}
-
-@media (max-width: 450px) {
-	.flexButtons {
-		display: flex;
-		flex-direction: column;
 	}
 }

@@ -1,7 +1,10 @@
 import React from 'react'
 import css from './form.module.css'
-import Nav from '../nav/Nav'
 import { TodoType } from '../../types/types'
+import { Button, Space } from 'antd'
+import { Typography, Divider } from 'antd'
+
+const { Text, Title } = Typography
 
 type PropsType = {
 	todos: TodoType[]
@@ -21,26 +24,38 @@ const Form: React.FC<PropsType> = ({ todos, setActive, lowImportantTasks, middle
 		}
 	}
 
+	// TODO поработать над адаптивностью для мобильных
+
 	return (
 		<div>
 			{todos.length > 0 ? (
 				<div className={css.wrapperTasks}>
-					<p>Срочные: {highImportantTasks.length}</p>
-					<p>Cредней срочности: {middleImportantTasks.length}</p>
-					<p>Не срочные: {lowImportantTasks.length}</p>
+					<div className={css.flexForTasks}>
+						<Text className={css.tasks} type='danger' strong>
+							Срочные: {highImportantTasks.length}
+						</Text>
+						<Text className={css.tasks} type='warning' strong>
+							Cредней срочности: {middleImportantTasks.length}
+						</Text>
+						<Text className={css.tasks} type='success' strong>
+							Не срочные: {lowImportantTasks.length}
+						</Text>
+					</div>
 				</div>
 			) : (
-				<h2>Напишите ваше первое задание</h2>
+				<Title className={css.title} italic level={2}>
+					Напишите ваше первое задание
+				</Title>
 			)}
+
 			<div className={css.formWrapper}>
-				<button onClick={() => setActive(true)} className={css.buttonStyle}>
+				<Button className={`${css.button} ${css.addTask}`} onClick={() => setActive(true)} size='large' type='primary'>
 					Добавить задание
-				</button>
-				<button className={css.buttonStyle} onClick={deleteAndConfirm}>
+				</Button>
+				<Button className={css.button} type='primary' danger size='large' onClick={deleteAndConfirm}>
 					Удалить все задания
-				</button>
+				</Button>
 			</div>
-			<Nav />
 		</div>
 	)
 }
